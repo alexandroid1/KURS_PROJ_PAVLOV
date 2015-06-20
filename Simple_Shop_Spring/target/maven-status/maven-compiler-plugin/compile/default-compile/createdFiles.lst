@@ -1,0 +1,14 @@
+org\itstep\java\web\mavenShop3\controllers\UserController.class
+org\itstep\java\web\mavenShop3\controllers\IndexController.class
+org\itstep\java\web\mavenShop3\controllers\ShopController.class
+org\itstep\java\web\mavenShop3\model\Basket.class
+org\itstep\java\web\mavenShop3\service\GoodService.class
+org\itstep\java\web\mavenShop3\model\Good.class
+org\itstep\java\web\mavenShop3\model\User$1.class
+org\itstep\java\web\mavenShop3\model\Category.class
+org\itstep\java\web\mavenShop3\service\MySQLUserService.class
+org\itstep\java\web\mavenShop3\model\BasketItem.class
+org\itstep\java\web\mavenShop3\model\Order.class
+org\itstep\java\web\mavenShop3\model\User.class
+org\itstep\java\web\mavenShop3\service\MySQLGoodService.class
+org\itstep\java\web\mavenShop3\service\UserService.class
