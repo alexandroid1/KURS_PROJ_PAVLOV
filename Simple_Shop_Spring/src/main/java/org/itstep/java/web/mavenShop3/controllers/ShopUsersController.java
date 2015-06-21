@@ -41,7 +41,7 @@ public class ShopUsersController {
     UserService userService;
 
     
-    @RequestMapping(value = "/show", method = RequestMethod.GET)
+    @RequestMapping(value = "/show", method = RequestMethod.POST)
     public String user(
             UsernamePasswordAuthenticationToken currentUser,
             @RequestParam(value = "id",required = true, defaultValue = "1")
@@ -59,7 +59,7 @@ public class ShopUsersController {
         return "user";
     }
        
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     public String userDelete(
             @PathVariable(value = "id")
             Integer id,
@@ -69,7 +69,7 @@ public class ShopUsersController {
         return "redirect:/user/show";
     }
     
-    @RequestMapping(value = "/editUser/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/editUser/{id}", method = RequestMethod.POST)
     public String userEdit(
             @PathVariable(value = "id")
             Integer id,
@@ -80,7 +80,7 @@ public class ShopUsersController {
         return "editUser";
     }
     
-    @RequestMapping(value = "/userEditSave", method = RequestMethod.GET)
+    @RequestMapping(value = "/userEditSave", method = RequestMethod.POST)
     public String userEditSave(
             @RequestParam(value = "id") Integer id,
             @RequestParam(value = "name") String name,
@@ -100,12 +100,12 @@ public class ShopUsersController {
         return "redirect:/user/show";
     }
     
-    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public String addUser(Model model){
         return "addUser";
     }
     
-    @RequestMapping(value = "/userSave", method = RequestMethod.GET)
+    @RequestMapping(value = "/userSave", method = RequestMethod.POST)
     public String userSave(
             @RequestParam(value = "name") String name,
             @RequestParam(value = "email") String email, 
@@ -124,7 +124,7 @@ public class ShopUsersController {
     
     
     
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(ModelMap model) {
         
         return "login";

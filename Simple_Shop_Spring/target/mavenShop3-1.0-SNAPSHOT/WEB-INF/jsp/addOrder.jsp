@@ -22,7 +22,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <form method="GET" action="<c:url value="/shop/saveOrder"/>">
+         <form method="POST" action="<c:url value="/shop/saveOrder"/>">
              <div class="col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">

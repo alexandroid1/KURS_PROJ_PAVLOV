@@ -20,7 +20,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form method="GET" action="<c:url value="/shop/goodAddSave"/>">
+        <form method="POST" action="<c:url value="/shop/goodAddSave"/>">
             <input type="hidden" name="id" />
             <label for="name">Name:</label>
             <input type="text" name="name" />

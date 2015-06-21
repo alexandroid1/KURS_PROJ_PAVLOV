@@ -31,7 +31,7 @@ public class ShopController {
     @Autowired
     GoodService goodService;
     UserService userService;
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.POST)
     public String categories(ModelMap model) {
         List<Category> cats = goodService.getCategoruiesList();
         
@@ -40,7 +40,7 @@ public class ShopController {
         return "categories";
     }
     
-    @RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/category/{id}", method = RequestMethod.POST)
     public String goods(
             @PathVariable(value = "id")
             Integer id,
@@ -51,7 +51,7 @@ public class ShopController {
         return "goodlist";
     }
     
-    @RequestMapping(value = "/add/{catId}/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/add/{catId}/{id}", method = RequestMethod.POST)
     public String addToBasket(
             @PathVariable(value = "catId")
             Integer catId,
@@ -78,7 +78,7 @@ public class ShopController {
         return "redirect:/shop/category/" + catId.toString();
     }
     
-    @RequestMapping(value = "/delete/{catId}/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete/{catId}/{id}", method = RequestMethod.POST)
     public String goodDelete(
             @PathVariable(value = "catId")
             Integer catId,
@@ -90,7 +90,7 @@ public class ShopController {
         return "redirect:/shop/category/" + catId.toString();
     }
     
-    @RequestMapping(value = "/addGood", method = RequestMethod.GET)
+    @RequestMapping(value = "/addGood", method = RequestMethod.POST)
     public String addGood(ModelMap model){
         List<Category> cats = goodService.getCategoruiesList();
         model.addAttribute("cats", cats);
@@ -98,7 +98,7 @@ public class ShopController {
         return "addGood";
     }
     
-    @RequestMapping(value = "/goodAddSave", method = RequestMethod.GET)
+    @RequestMapping(value = "/goodAddSave", method = RequestMethod.POST)
     public String goodSave(
             //@RequestParam(value = "id") Integer id,
             @RequestParam(value = "name") String name,
@@ -117,7 +117,7 @@ public class ShopController {
         return "redirect:/shop/category/" + cat.toString();
     }
     
-    @RequestMapping(value = "/editGood/{catId}/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/editGood/{catId}/{id}", method = RequestMethod.POST)
     public String editGood(
             @PathVariable(value = "catId")
             Integer catId,
@@ -134,7 +134,7 @@ public class ShopController {
         return "editGood";
     }
     
-    @RequestMapping(value = "/goodEditSave/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/goodEditSave/{id}", method = RequestMethod.POST)
     public String userEditSave(
             @RequestParam(value = "id") Integer id,
             @RequestParam(value = "name") String name,
@@ -150,7 +150,7 @@ public class ShopController {
         return "redirect:/shop/category/" + cat.toString();
     }
     
-    @RequestMapping(value = "/orderAdd", method = RequestMethod.GET)
+    @RequestMapping(value = "/orderAdd", method = RequestMethod.POST)
     public String addOrder(
             Integer catId,
             ModelMap model) {
@@ -164,7 +164,7 @@ public class ShopController {
         return "addOrder";
     }
     
-    @RequestMapping(value = "/saveOrder", method = RequestMethod.GET)
+    @RequestMapping(value = "/saveOrder", method = RequestMethod.POST)
     public String saveOrder(
             @RequestParam(value = "id") Integer id,
             @RequestParam(value = "DeliverAddress") String DeliverAddress,
@@ -194,7 +194,7 @@ public class ShopController {
         return "redirect:/shop/category/" + 1;
     }
     
-    @RequestMapping(value = "/history/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/history/{id}", method = RequestMethod.POST)
     public String historyOrder(
             @PathVariable(value = "id")
             Integer id,
@@ -209,8 +209,8 @@ public class ShopController {
         return "historyOrder";
     }
     
-    @RequestMapping(value = "/basketDelete", method = RequestMethod.GET)
-    //@RequestMapping(value = "/basketDelete/{catId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/basketDelete", method = RequestMethod.POST)
+    //@RequestMapping(value = "/basketDelete/{catId}", method = RequestMethod.POST)
     public String deleteToBasket(
             //@PathVariable(value = "catId")
             //Integer catId,
@@ -225,7 +225,7 @@ public class ShopController {
         return "redirect:/shop/category/" + 1;
     }
     
-    @RequestMapping(value = "/deleteGoodInBasket/{catId}/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/deleteGoodInBasket/{catId}/{id}", method = RequestMethod.POST)
     public String deleteToGoodBasket(
             @PathVariable(value = "catId")
             Integer catId,

@@ -22,7 +22,7 @@
         <title>Edit good</title>
     </head>
     <body>
-        <form method="GET" action="<c:url value="/shop/goodEditSave/${good.getId()}"/>">
+        <form method="POST" action="<c:url value="/shop/goodEditSave/${good.getId()}"/>">
             <input type="hidden" name="id" value="${good.getId()}" />
             <label for="name">Name:</label>
             <input type="text" name="name" value="${good.getName()}" />

@@ -22,7 +22,7 @@
         <title>Add user</title>
     </head>
     <body>
-        <form method="GET" action="<c:url value="/user/userSave"/>">
+        <form method="POST" action="<c:url value="/user/userSave"/>">
             <input type="hidden" name="id" />
             <label for="name">Name:</label>
             <input type="text" name="name" />
